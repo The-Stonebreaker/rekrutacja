@@ -1,12 +1,10 @@
 <!--
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     AKAI Frontend Task - HTML
-
 	W tym pliku znajduje się struktura strony z formularzem. Twoim zadaniem jest upiększenie
 	tego formularza. Przeanalizuj poniższy kod. Jego znajomość będzie potrzebna do przerobienia
-	pliku form.css odpowiedzialnego za styl strony. Gdy zapoznasz się ze strukturą strony,
+	pliku form.css odpowiedzialnego za styl strony. Gdy zapoznasz się ze strukturą strony,
 	przejdź do pliku css/form.css lub js/validation.js po dalsze instrukcje.
-
     Powodzenia!
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
@@ -15,7 +13,9 @@
 <html>
 <head>
 	<title>AKAI Frontend Task</title>
-	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="form.css">
+  <script type="text/javascript" src="validation.js"></script>
+  
 	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
@@ -31,38 +31,38 @@
 	<section id="task-frontend">
 
 		<!-- element span otrzymuje klasę "basic-title". Klasa ta może być wykorzystywana w wielu różnych elementach -->
-		<span class="basic-title">Dołącz do nas!</span>
+    <img id="logo-img" src="https://cdn.glitch.global/f57f1915-fbc0-4a01-ad56-1586275dbeec/9dc5bfe3-e6f1-455c-82e9-ead6dacc4281.image.png?v=1666443296660" />
+		<span class="basic-title">Formularz rekrutacyjny</span>
+    
 
-		<hr class="form-line"></hr>
-
-		<form method="POST">
+		<form name="myForm" onsubmit="return validateForm()">
 
 			<!-- od użytkownika pobieramy imię, nazwisko, email oraz informację, do jakiej sekcji chce dołączyć -->
 
-			<label for="first-name">Imię</label>
-		    <input type="text" id="first-name"/>
+		    <input type="text" id="first-name" placeholder="Imie"/>
 
-            <label for="last-name">Nazwisko</label>
-		    <input type="text" id="last-name"/>
+		    <input type="text" id="last-name" placeholder="Nazwisko"/>
 
-			<label for="email">Email</label>
-		    <input type="email" id="email"/>
+		    <input type="email" id="email" placeholder="E-mail"/>
 
-			<span>Sekcja</span>
-            <input type="checkbox" id="frontend-checkbox" name="section" value="frontend">
+			<span id="header-checkboxes">Sekcje, do których chcesz dołączyć:</span>
+      <span id="checkboxes">
+            <input type="checkbox" id="frontend-checkbox" name="section" value="frontend" checked="checked">
             <label for="frontend-checkbox">Frontend</label>
-            <input type="checkbox" id="backend-checkbox" name="section" value="frontend">
+        <span></span>
+      
+            <input type="checkbox" id="backend-checkbox" name="section" value="frontend" checked="checked">
             <label for="backend-checkbox">Backend</label>
-            <input type="checkbox" id="mobile-checkbox" name="section" value="frontend">
+        <span></span>
+            <input type="checkbox" id="mobile-checkbox" name="section" value="frontend" checked="checked">
             <label for="mobile-checkbox">Mobile</label>
-            <input type="checkbox" id="graphics-checkbox" name="section" value="frontend">
+        <span></span>
+            <input type="checkbox" id="graphics-checkbox" name="section" value="frontend" checked="checked">
             <label for="graphics-checkbox">Grafika</label>
-
-            <input type="submit" value="Prześlij">
+      <span></span>
+            <input type="submit" value="Wyślij">
+      </span>
 		</form>
-
-		<hr class="form-line"></hr>
-
 	</section>
 	<!-- koniec formularza -->
 
@@ -71,10 +71,5 @@
         ...
         ...
     -->
-
-
-<!-- zaimportowanie pliku z kodem javascript, który dokona walidacji danych (zadanie JS) -->
-<script type="text/javascript" src="js/validation.js"></script>
-
 </body>
 </html>
